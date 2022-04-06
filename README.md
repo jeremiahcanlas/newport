@@ -1,6 +1,6 @@
-# Welcome to my new portfolio
+# Welcome to my portfolio
 
-My name is jeremiah and welcome to my portfolio short but sweet documentation.
+My name is jeremiah and welcome to my portfolio's short but sweet documentation.
 
 ### The Stack I use:
 
