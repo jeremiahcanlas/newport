@@ -1,11 +1,18 @@
 import type { NextPage } from "next";
-import { Text, Heading } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import Meta from "../components/Meta";
+import Hero from "../components/Hero";
 
 const Home: NextPage = () => {
   return (
-    <Heading as="h1" color={"red"}>
-      Jeremiah Canlas
-    </Heading>
+    <>
+      <Meta />
+      <Box>
+        <Hero />
+        {/* <AboutMe/> */}
+        {/* <Projects/> */}
+      </Box>
+    </>
   );
 };
 
