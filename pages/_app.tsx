@@ -4,14 +4,6 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import Layout from "../components/Layout";
 
 const colors = {
-  styles: {
-    global: {
-      body: {
-        bg: "blue",
-        color: "white",
-      },
-    },
-  },
   // this is where you preset brand colors then pass "color = {brand.x00}"
   brand: {
     900: "#1a365d",
