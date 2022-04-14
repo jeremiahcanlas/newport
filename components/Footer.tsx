@@ -47,7 +47,7 @@ const Footer = () => {
       </HStack>
 
       <Text fontWeight="300" fontSize="0.8em" letterSpacing="0.8px">
-        {new Date().getFullYear()} JEREMIAH CANLAS
+        {new Date().getFullYear()} Jeremiah Canlas
       </Text>
     </Container>
   );

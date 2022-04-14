@@ -1,12 +1,6 @@
-import {
-  Container,
-  Heading,
-  Box,
-  Button,
-  Text,
-  useColorMode,
-} from "@chakra-ui/react";
-import Toggle from "./Toggle";
+import { Container, Box, Text, useColorMode } from "@chakra-ui/react";
+import data from "../public/data/data";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -18,51 +12,56 @@ const Hero = () => {
       textAlign="left"
       centerContent
       justifyContent="center"
+      cursor={"default"}
     >
-      <Box pos={"absolute"} top={0} right={0}>
-        <Container my=".5em" textAlign={"center"}>
-          <Toggle />
-        </Container>
-        {colorMode === "light" && (
-          <Text fontSize={"0.5em"} letterSpacing="1px" mr="1em">
-            try the darkside!
+      <Box
+        w={["100%", "90%", "100%"]}
+        h="50vh"
+        as={motion.div} //will triger framer motion
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition="0.5s ease-in"
+      >
+        <Box letterSpacing="1px">
+          <Text fontWeight={500} fontSize={["1.5em", "2.1em"]}>
+            {data.hero.intro}
           </Text>
-        )}
-      </Box>
-      <Box h="50vh">
-        <Heading
-          lineHeight="1.5em"
-          letterSpacing="1px"
-          w={"100%"}
-          fontSize={["2em", "3em"]}
-        >
-          Hello, my name is{" "}
           <Text
+            lineHeight={1}
+            fontWeight={700}
             bgGradient={
               colorMode === "light"
                 ? "linear(to-l, #8711c1,#2472fc)"
-                : "linear(to-l, #f7ba2c,#ea5459)"
+                : "linear(to-l, #f7ba2c 60%,#ea5459)"
             }
             bgClip="text"
             letterSpacing="1px"
-            fontSize={["1.4em", "1.5em"]}
+            fontSize={["2.7em", "3em"]}
           >
-            Jeremiah
+            {data.hero.name}
           </Text>{" "}
-          <Box mt="0.5em">
-            <Text fontSize={"0.4em"} lineHeight="5">
-              I am a front-end web developer
-              {colorMode === "dark" && (
-                <Text
-                  bgGradient={"linear(to-l, #3bcfd4,#fc9305,#f20094)"}
-                  bgClip="text"
-                >
-                  with pixel perfect dreams.
-                </Text>
-              )}
+        </Box>
+
+        <Box
+          mt="0.5em"
+          letterSpacing={"2px"}
+          fontWeight={500}
+          fontSize={["2.5em", "3em"]}
+        >
+          <Text fontSize={"0.4em"} lineHeight="5">
+            {data.hero.info}
+          </Text>
+          {colorMode === "dark" && (
+            <Text
+              lineHeight="8"
+              fontSize={"0.4em"}
+              bgGradient={"linear(to-l, #3bcfd4 50%,#fc9305,#f20094)"}
+              bgClip="text"
+            >
+              {data.hero.infoDark}
             </Text>
-          </Box>
-        </Heading>
+          )}
+        </Box>
       </Box>
     </Container>
   );
