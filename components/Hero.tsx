@@ -1,6 +1,7 @@
-import { Container, Box, Text, useColorMode } from "@chakra-ui/react";
+import { Container, Box, Text, useColorMode, Button } from "@chakra-ui/react";
 import data from "../public/data/data";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const Hero = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -35,7 +36,7 @@ const Hero = () => {
                 : "linear(to-l, #f7ba2c 60%,#ea5459)"
             }
             bgClip="text"
-            letterSpacing="1px"
+            letterSpacing="1.5px"
             fontSize={["2.7em", "3em"]}
           >
             {data.hero.name}
@@ -61,6 +62,14 @@ const Hero = () => {
               {data.hero.infoDark}
             </Text>
           )}
+          <Link to="about" smooth duration={800} offset={-50}>
+            <Button
+              variant="outline"
+              _focus={{ outline: "none" }} // this removes chakra ui weird focus border
+            >
+              Know more
+            </Button>
+          </Link>
         </Box>
       </Box>
     </Container>

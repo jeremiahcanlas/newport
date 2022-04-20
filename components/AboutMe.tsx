@@ -1,34 +1,50 @@
 import data from "../public/data/data";
-import { Box, Stack, Text, useColorMode } from "@chakra-ui/react";
+import { Box, Stack, Text, useColorMode, Button } from "@chakra-ui/react";
+import Fade from "react-reveal/Fade";
 
 const AboutMe = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box height="100vh" width={["100%", "100%", "60%"]} py="1em" mx="auto">
+    <Box id="about" my="3em" width={["100%", "100%", "60%"]} mx="auto">
       <Stack
         direction={"column"}
         mx="1em"
         spacing={"1em"}
-        letterSpacing="1.6px"
+        letterSpacing={["1px", "1.6px"]}
         lineHeight={8}
       >
-        <Text
-          fontSize={"1.6em"}
-          fontWeight={700}
-          bgGradient={
-            colorMode === "light"
-              ? "linear(to-l, black,black)"
-              : "linear(to-l, #f7ba2c 60%,#ea5459)"
-          }
-          bgClip="text"
-        >
-          {data.about.title}
-        </Text>
-        <Text>{data.about.paraOne}</Text>
-        <Text>{data.about.paraTwo}</Text>
-        <Text>{data.about.paraThree}</Text>
+        <Fade delay={200} duration={1000}>
+          <Text
+            fontSize={"1.6em"}
+            fontWeight={700}
+            bgGradient={
+              colorMode === "light"
+                ? "linear(to-l, black,black)"
+                : "linear(to-l, #f7ba2c 60%,#ea5459)"
+            }
+            bgClip="text"
+          >
+            {data.about.title}
+          </Text>
+        </Fade>
+        <Fade delay={200} duration={1000}>
+          <Text>{data.about.paraOne}</Text>
+        </Fade>
+        <Fade delay={200} duration={1000}>
+          <Text>{data.about.paraTwo}</Text>
+        </Fade>
+        <Fade delay={200} duration={1000}>
+          <Text>{data.about.paraThree}</Text>
+        </Fade>
       </Stack>
+      <Button
+        mt="3em"
+        mx="1em"
+        _focus={{ outline: "none" }} // this removes chakra ui weird focus border
+      >
+        Résumé
+      </Button>
     </Box>
   );
 };

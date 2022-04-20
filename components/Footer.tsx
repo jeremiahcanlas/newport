@@ -12,7 +12,7 @@ const Footer = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Container textAlign="center" py="0.8em" minW="100%" my="1px">
+    <Container textAlign="center" py="0.8em">
       <HStack spacing={"1.5em"} justify="center" mx="auto">
         <Link
           href="https://github.com/jeremiahcanlas"
