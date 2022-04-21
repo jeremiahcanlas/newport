@@ -1,6 +1,6 @@
 import data from "../public/data/data";
 import { Box, Stack, Text, useColorMode, Button } from "@chakra-ui/react";
-import Fade from "react-reveal/Fade";
+import Fade from "react-reveal";
 
 const AboutMe = () => {
   const { colorMode, toggleColorMode } = useColorMode();

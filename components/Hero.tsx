@@ -8,6 +8,7 @@ const Hero = () => {
 
   return (
     <Container
+      className="hero-section"
       height="100vh"
       width="100%"
       textAlign="left"
@@ -52,25 +53,42 @@ const Hero = () => {
           <Text fontSize={"0.4em"} lineHeight="5">
             {data.hero.info}
           </Text>
-          {colorMode === "dark" && (
+
+          <Text
+            visibility={colorMode === "dark" ? "visible" : "hidden"}
+            lineHeight="8"
+            fontSize={"0.4em"}
+            bgGradient={"linear(to-l, #3bcfd4 50%,#fc9305,#f20094)"}
+            bgClip="text"
+          >
+            {data.hero.infoDark}
+          </Text>
+        </Box>
+        <Link to="about" smooth duration={800} offset={-50}>
+          <Button
+            size="sm"
+            mt="0.5em"
+            borderWidth={"1px"}
+            borderColor={
+              colorMode === "light" ? "blackAlpha.800" : "whiteAlpha.800"
+            }
+            variant="outline"
+            _focus={{ outline: "none" }} // this removes chakra ui weird focus border
+          >
             <Text
-              lineHeight="8"
-              fontSize={"0.4em"}
-              bgGradient={"linear(to-l, #3bcfd4 50%,#fc9305,#f20094)"}
+              // fontWeight={700}
+              letterSpacing="1px"
+              bgGradient={
+                colorMode === "light"
+                  ? "linear(to-l, #1a202c,#1a202c)"
+                  : "linear(to-l, #3bcfd4 50%,#fc9305,#f20094)"
+              }
               bgClip="text"
             >
-              {data.hero.infoDark}
+              Know More
             </Text>
-          )}
-          <Link to="about" smooth duration={800} offset={-50}>
-            <Button
-              variant="outline"
-              _focus={{ outline: "none" }} // this removes chakra ui weird focus border
-            >
-              Know more
-            </Button>
-          </Link>
-        </Box>
+          </Button>
+        </Link>
       </Box>
     </Container>
   );

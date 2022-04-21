@@ -1,18 +1,32 @@
 import {
   Text,
+  Box,
   Container,
   Link,
   Icon,
   HStack,
   useColorMode,
 } from "@chakra-ui/react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link as LinkScroll } from "react-scroll";
+import { FaGithub, FaLinkedin, FaChevronUp } from "react-icons/fa";
 
 const Footer = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Container textAlign="center" py="0.8em">
+      <Box mb="2em">
+        <LinkScroll to="hero-section" smooth duration={800}>
+          <Icon
+            as={FaChevronUp}
+            color={colorMode === "light" ? "black" : "white"}
+            fontSize="1em"
+            cursor="pointer"
+          />
+        </LinkScroll>
+
+        <Text fontSize={"0.8em"}>Back to Top</Text>
+      </Box>
       <HStack spacing={"1.5em"} justify="center" mx="auto">
         <Link
           href="https://github.com/jeremiahcanlas"
