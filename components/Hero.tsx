@@ -45,7 +45,7 @@ const Hero = () => {
         </Box>
 
         <Box
-          mt="0.5em"
+          my="0.5em"
           letterSpacing={"2px"}
           fontWeight={500}
           fontSize={["2.5em", "3em"]}
@@ -66,26 +66,29 @@ const Hero = () => {
         </Box>
         <Link to="about" smooth duration={800} offset={-50}>
           <Button
-            size="sm"
+            as={motion.button}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition="0.5s ease-in 1s"
+            size="md"
             mt="0.5em"
             borderWidth={"1px"}
+            borderRadius="2px"
             borderColor={
-              colorMode === "light" ? "blackAlpha.800" : "whiteAlpha.800"
+              colorMode === "light" ? "blackAlpha.700" : "whiteAlpha.700"
             }
             variant="outline"
+            _active={{ backgroundColor: "transparent" }}
             _focus={{ outline: "none" }} // this removes chakra ui weird focus border
           >
             <Text
-              // fontWeight={700}
-              letterSpacing="1px"
-              bgGradient={
-                colorMode === "light"
-                  ? "linear(to-l, #1a202c,#1a202c)"
-                  : "linear(to-l, #3bcfd4 50%,#fc9305,#f20094)"
+              fontWeight={700}
+              color={
+                colorMode === "light" ? "blackAlpha.800" : "whiteAlpha.800"
               }
-              bgClip="text"
+              letterSpacing="0.5px"
             >
-              Know More
+              Know more
             </Text>
           </Button>
         </Link>
