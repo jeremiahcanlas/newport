@@ -1,12 +1,5 @@
-import {
-  Box,
-  Container,
-  Stack,
-  Text,
-  Button,
-  Divider,
-  Center,
-} from "@chakra-ui/react";
+import { Box, Container, Stack, Text } from "@chakra-ui/react";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   return (
@@ -28,9 +21,7 @@ const Contact = () => {
         </Container>
 
         <Container centerContent justifyContent={"center"}>
-          <Button borderWidth={"2px"} variant={"outline"} mt={["2em", "0"]}>
-            Contact Me
-          </Button>
+          <ContactForm />
         </Container>
       </Stack>
     </Box>
