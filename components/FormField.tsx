@@ -25,7 +25,7 @@ const FormField: React.FC<Props> = ({ placeholder, name, type, textbox }) => {
                 variant="flushed"
                 id={name}
                 placeholder={placeholder}
-                height={["400px", "300px"]}
+                height={["200px", "150px"]}
               />
             ) : (
               <Input

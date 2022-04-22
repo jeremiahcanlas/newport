@@ -14,10 +14,23 @@ import {
 } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import FormField from "./FormField";
+import * as Yup from "yup";
 
 const ContactForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+
+  //using Yup for form validation.
+  const validateForm = Yup.object({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string()
+      .matches(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        "Enter a valid email address"
+      )
+      .required("Email is required"),
+    body: Yup.string().required("Message is required"),
+  });
 
   return (
     <>
@@ -28,7 +41,7 @@ const ContactForm = () => {
         onClick={onOpen}
         mt="2em"
       >
-        here.
+        Reach me
       </Button>
 
       <Modal
@@ -61,8 +74,6 @@ const ContactForm = () => {
           <ModalCloseButton />
 
           <ModalBody>
-            {/* Make sure they are properly validated */}
-            {/* Make sure we could return all necessary fields */}
             <Formik
               initialValues={{
                 name: "",
@@ -72,6 +83,7 @@ const ContactForm = () => {
               onSubmit={(values: any, actions: any) => {
                 console.log(values);
               }}
+              validationSchema={validateForm}
             >
               {(props: { isSubmitting: boolean | undefined }) => {
                 return (
