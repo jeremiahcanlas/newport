@@ -12,13 +12,19 @@ import {
   useColorMode,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import { useRouter } from "next/router";
 import { Formik, Form } from "formik";
 import FormField from "./FormField";
 import * as Yup from "yup";
+import axios from "axios";
 
 const ContactForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const router = useRouter();
+
+  const [isSubmitted, setSubmitted] = useState(false);
 
   //using Yup for form validation.
   const validateForm = Yup.object({
@@ -31,6 +37,29 @@ const ContactForm = () => {
       .required("Email is required"),
     body: Yup.string().required("Message is required"),
   });
+
+  //submitting contact form using nextjs/api
+  const handleSubmit = async (values: any) => {
+    const { name, email, body } = values;
+
+    const message = JSON.stringify({
+      name: name,
+      email: email,
+      body: body,
+    });
+
+    try {
+      await axios.post("/api/submitForm", message, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      setSubmitted(true);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <>
@@ -57,71 +86,84 @@ const ContactForm = () => {
           bg={colorMode === "light" ? "#ffffff" : "#11141c"}
           opacity="1"
         >
-          <Box>
-            <ModalHeader
-              pb="0"
-              fontSize={"2em"}
-              fontWeight={700}
-              letterSpacing="1.4px"
-            >
-              Talk soon
-            </ModalHeader>
-            <Text mx="24px" fontSize={"0.9em"} fontWeight={200}>
-              {"Do it. I promise I won't ghost you.👻"}
-            </Text>
-          </Box>
+          {/* if form is not submitted then it will render contact form */}
+          {!isSubmitted ? (
+            <>
+              <Box>
+                <ModalHeader
+                  pb="0"
+                  fontSize={"2em"}
+                  fontWeight={700}
+                  letterSpacing="1.4px"
+                >
+                  Talk soon
+                </ModalHeader>
+                <Text mx="24px" fontSize={"0.9em"} fontWeight={200}>
+                  {"Do it. I promise I won't ghost you.👻"}
+                </Text>
+              </Box>
 
-          <ModalCloseButton />
+              <ModalCloseButton />
 
-          <ModalBody>
-            <Formik
-              initialValues={{
-                name: "",
-                email: "",
-                body: "",
-              }}
-              onSubmit={(values: any, actions: any) => {
-                console.log(values);
-              }}
-              validationSchema={validateForm}
-            >
-              {(props: { isSubmitting: boolean | undefined }) => {
-                return (
-                  <Form>
-                    <FormField
-                      type="text"
-                      placeholder="Name"
-                      name="name"
-                      textbox={false}
-                    />
+              <ModalBody>
+                <Formik
+                  initialValues={{
+                    name: "",
+                    email: "",
+                    body: "",
+                  }}
+                  onSubmit={handleSubmit}
+                  validationSchema={validateForm}
+                >
+                  {(props: { isSubmitting: boolean | undefined }) => {
+                    return (
+                      <Form>
+                        <FormField
+                          type="text"
+                          placeholder="Name"
+                          name="name"
+                          textbox={false}
+                        />
+                        <FormField
+                          type="email"
+                          placeholder="Email"
+                          name="email"
+                          textbox={false}
+                        />
+                        <FormField
+                          type=""
+                          placeholder="Message here."
+                          name="body"
+                          textbox
+                        />
+                        <Button
+                          mt={4}
+                          colorScheme="teal"
+                          isLoading={props.isSubmitting}
+                          type="submit"
+                        >
+                          Submit
+                        </Button>
+                      </Form>
+                    );
+                  }}
+                </Formik>
+              </ModalBody>
+            </>
+          ) : (
+            // FIX THIS SHIT PLEASE.
+            <div>Successfully Submitted.</div>
+          )}
 
-                    <FormField
-                      type="email"
-                      placeholder="Email"
-                      name="email"
-                      textbox={false}
-                    />
-                    <FormField
-                      type=""
-                      placeholder="Message here."
-                      name="body"
-                      textbox
-                    />
-                    <Button
-                      mt={4}
-                      colorScheme="teal"
-                      isLoading={props.isSubmitting}
-                      type="submit"
-                    >
-                      Submit
-                    </Button>
-                  </Form>
-                );
-              }}
-            </Formik>
-          </ModalBody>
           <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
+            <Button
+              onClick={() => {
+                setSubmitted(false);
+                onClose();
+              }}
+            >
+              Close
+            </Button>
           </ModalFooter>
         </ModalContent>
       </Modal>

@@ -12,6 +12,8 @@
     "@chakra-ui/react": "^1.8.7",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
+    "@sendgrid/mail": "^7.6.2",
+    "axios": "^0.26.1",
     "formik": "^2.2.9",
     "framer-motion": "^6.2.8",
     "next": "12.1.4",
