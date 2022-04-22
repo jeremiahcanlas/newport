@@ -1,7 +1,7 @@
 import sendgrid from "@sendgrid/mail";
 import { NextApiRequest, NextApiResponse } from "next";
 
-sendgrid.setApiKey(process.env.sendgrid_key as string);
+sendgrid.setApiKey(process.env.SENDGRID_KEY as string);
 
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
