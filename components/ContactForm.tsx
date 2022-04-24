@@ -11,6 +11,7 @@ import {
   Text,
   useColorMode,
   useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -22,6 +23,7 @@ import axios from "axios";
 const ContactForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const toast = useToast();
   const router = useRouter();
 
   const [isSubmitted, setSubmitted] = useState(false);
@@ -48,6 +50,9 @@ const ContactForm = () => {
       body: body,
     });
 
+    // create a new api token and add it to the env vars
+    // finish the page when it
+
     try {
       await axios.post("/api/submitForm", message, {
         headers: {
@@ -58,6 +63,25 @@ const ContactForm = () => {
       setSubmitted(true);
     } catch (e) {
       console.log(e);
+
+      toast({
+        position: "top",
+
+        render: () => (
+          <Box
+            borderRadius={"0.3em"}
+            backgroundColor="red.400"
+            padding="2em"
+            mx="auto"
+          >
+            <Text color={"black"} fontWeight={"400"}>
+              {"Server Error, Try again in a few..."}
+            </Text>
+            {/* <Text color={"black"}>You successfully logged in.</Text> */}
+          </Box>
+        ),
+        duration: 3000,
+      });
     }
   };
 
@@ -115,7 +139,7 @@ const ContactForm = () => {
                   onSubmit={handleSubmit}
                   validationSchema={validateForm}
                 >
-                  {(props: { isSubmitting: boolean | undefined }) => {
+                  {({ isSubmitting }: any) => {
                     return (
                       <Form>
                         <FormField
@@ -139,7 +163,7 @@ const ContactForm = () => {
                         <Button
                           mt={4}
                           colorScheme="teal"
-                          isLoading={props.isSubmitting}
+                          isLoading={isSubmitting}
                           type="submit"
                         >
                           Submit
@@ -152,7 +176,26 @@ const ContactForm = () => {
             </>
           ) : (
             // FIX THIS SHIT PLEASE.
-            <div>Successfully Submitted.</div>
+            <>
+              <Box>
+                <ModalHeader
+                  pb="0"
+                  fontSize={"2em"}
+                  fontWeight={700}
+                  letterSpacing="1.4px"
+                >
+                  Thanks
+                </ModalHeader>
+                <Text mx="24px" fontSize={"0.8em"} fontWeight={200}>
+                  {"no, really I mean it."}
+                </Text>
+                <Text mt="1em" mx="24px" fontSize={"1em"} fontWeight={200}>
+                  {"Your message has successfully been sent, talk soon."}
+                </Text>
+              </Box>
+
+              <ModalCloseButton />
+            </>
           )}
 
           <ModalFooter>
@@ -161,6 +204,7 @@ const ContactForm = () => {
                 setSubmitted(false);
                 onClose();
               }}
+              size="sm"
             >
               Close
             </Button>

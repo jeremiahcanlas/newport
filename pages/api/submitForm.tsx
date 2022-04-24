@@ -1,14 +1,14 @@
 import sendgrid from "@sendgrid/mail";
 import { NextApiRequest, NextApiResponse } from "next";
 
-sendgrid.setApiKey(process.env.SENDGRID_KEY as string);
-
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 /* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, body } = req.body;
 
+  // console.log(process.env.SENDGRID_KEY);
   try {
-    console.log("REQ.BODY", req.body);
+    // console.log("REQ.BODY", req.body);
     await sendgrid.send({
       to: "info@jeremiahcanlas.com", // Your email where you'll receive emails
       from: "info@jeremiahcanlas.com", // your website email address here
@@ -22,7 +22,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       `,
     });
   } catch (e) {
-    console.log(e);
+    console.log({ e });
     return res.status(500).json({ error: "error" });
   }
 
