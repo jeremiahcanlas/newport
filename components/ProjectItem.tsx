@@ -1,4 +1,4 @@
-import { Container, Text } from "@chakra-ui/react";
+import { Badge, Container, Stack, Text } from "@chakra-ui/react";
 
 // WORK on this one !!
 const ProjectItem = ({ project }: any) => {
@@ -6,9 +6,13 @@ const ProjectItem = ({ project }: any) => {
     <Container border={"1px solid black"} borderRadius="2px" padding="1em">
       <Text fontWeight={"600"}>{project.name}</Text>
       <Text>{project.info1}</Text>
-      {project.stack.map((item: string) => {
-        return <Text key={item}>{item}</Text>;
-      })}
+      <Container>
+        <Stack>
+          {project.stack.map((item: string) => {
+            return <Badge key={item}>{item}</Badge>;
+          })}
+        </Stack>
+      </Container>
     </Container>
   );
 };

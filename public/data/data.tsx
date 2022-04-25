@@ -48,9 +48,19 @@ const data = {
     },
     {
       name: "Homepage",
-      info1: "",
+      info1:
+        "A custom homepage with a dynamic background, random quote generator, current weather, personalized greeting, current time & date. The data comes from openweather API and random quote generator API.",
       info2: "",
-      stack: [],
+      stack: [
+        "HTML5",
+        "Javascript",
+        "React",
+        "Gatsby",
+        "GraphQL",
+        "Sass",
+        "Axios",
+        "Framer Motion",
+      ],
     },
   ],
 };
