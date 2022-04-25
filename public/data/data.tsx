@@ -14,6 +14,45 @@ const data = {
     paraThree:
       "I specialize in front end development with a solid foundation in back end, solving complex problems with elegantly simple solutions.",
   },
+  projects: [
+    {
+      name: "Through the Woods",
+      info1:
+        "A personal blog app that tracks and highlights explored trails. Authorized users can create, update and delete trail entries. A full CRUD application that utilizes NextJS with ChakraUI, Strapi CMS backend with MongoDB and Cloudinary.",
+      info2: "",
+      stack: [
+        "NextJS",
+        "NextAuth",
+        "ChakraUI",
+        "Strapi",
+        "MongoDB",
+        "Cloudinary",
+        "Axios",
+        "MapboxGL",
+      ],
+    },
+    {
+      name: "Experience Rally",
+      info1:
+        "A subscription based website that offers three subscription services for live rally races. It contains a hero page along with additional information, subscription package page and a checkout page.",
+      info2: "",
+      stack: [
+        "HTML5",
+        "Javascript",
+        "React",
+        "Sass",
+        "Framer Motion",
+        "React Reveal",
+        "React Responsive",
+      ],
+    },
+    {
+      name: "Homepage",
+      info1: "",
+      info2: "",
+      stack: [],
+    },
+  ],
 };
 
 export default data;

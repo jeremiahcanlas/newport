@@ -50,9 +50,6 @@ const ContactForm = () => {
       body: body,
     });
 
-    // create a new api token and add it to the env vars
-    // finish the page when it
-
     try {
       await axios.post("/api/submitForm", message, {
         headers: {
@@ -62,8 +59,6 @@ const ContactForm = () => {
 
       setSubmitted(true);
     } catch (e) {
-      console.log(e);
-
       toast({
         position: "top",
 
@@ -77,7 +72,6 @@ const ContactForm = () => {
             <Text color={"black"} fontWeight={"400"}>
               {"Server Error, Try again in a few..."}
             </Text>
-            {/* <Text color={"black"}>You successfully logged in.</Text> */}
           </Box>
         ),
         duration: 3000,
@@ -93,6 +87,7 @@ const ContactForm = () => {
         borderRadius="2px"
         onClick={onOpen}
         mt="2em"
+        _focus={{ outline: "none" }} // this removes chakra ui weird focus border
       >
         Reach me
       </Button>
@@ -127,7 +122,9 @@ const ContactForm = () => {
                 </Text>
               </Box>
 
-              <ModalCloseButton />
+              <ModalCloseButton
+                _focus={{ outline: "none" }} // this removes chakra ui weird focus border
+              />
 
               <ModalBody>
                 <Formik
@@ -163,6 +160,7 @@ const ContactForm = () => {
                         <Button
                           mt={4}
                           colorScheme="teal"
+                          borderRadius="2px"
                           isLoading={isSubmitting}
                           type="submit"
                         >
@@ -175,7 +173,6 @@ const ContactForm = () => {
               </ModalBody>
             </>
           ) : (
-            // FIX THIS SHIT PLEASE.
             <>
               <Box>
                 <ModalHeader
@@ -204,6 +201,8 @@ const ContactForm = () => {
                 setSubmitted(false);
                 onClose();
               }}
+              _focus={{ outline: "none" }} // this removes chakra ui weird focus border
+              borderRadius="2px"
               size="sm"
             >
               Close

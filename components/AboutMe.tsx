@@ -41,6 +41,7 @@ const AboutMe = () => {
       <Button
         mt="3em"
         mx="1em"
+        borderRadius="2px"
         _focus={{ outline: "none" }} // this removes chakra ui weird focus border
       >
         Résumé
