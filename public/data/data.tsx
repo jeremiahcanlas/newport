@@ -1,3 +1,8 @@
+//content management
+import ttw from "../../assett/ttw.png";
+import rally from "../../assett/rally.png";
+import hp from "../../assett/hp.png";
+
 const data = {
   hero: {
     intro: "Hello, my name is",
@@ -5,6 +10,7 @@ const data = {
     info: "I am a front end web developer",
     infoDark: "with pixel perfect dreams✨",
   },
+
   about: {
     title: "A little bit more about me...",
     paraOne:
@@ -14,6 +20,7 @@ const data = {
     paraThree:
       "I specialize in front end development with a solid foundation in back end, solving complex problems with elegantly simple solutions.",
   },
+
   projects: [
     {
       name: "Through the Woods",
@@ -30,6 +37,9 @@ const data = {
         "Axios",
         "MapboxGL",
       ],
+      link: "",
+      github: "",
+      image: ttw,
     },
     {
       name: "Experience Rally",
@@ -45,6 +55,9 @@ const data = {
         "React Reveal",
         "React Responsive",
       ],
+      link: "",
+      github: "",
+      image: rally,
     },
     {
       name: "Homepage",
@@ -61,6 +74,9 @@ const data = {
         "Axios",
         "Framer Motion",
       ],
+      link: "",
+      github: "",
+      image: hp,
     },
   ],
 };
