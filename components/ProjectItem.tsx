@@ -42,13 +42,14 @@ const ProjectItem = ({ project }: any) => {
           </Button>
         </Stack>
       </Container>
-      <Box>
+      <Box display="block">
         <Image
           src={project.image}
           alt="Picture of the author"
           width="400px"
           height="300px"
           layout="responsive"
+          quality={40}
         />
       </Box>
     </Stack>

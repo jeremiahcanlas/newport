@@ -9,7 +9,7 @@ const Projects = () => {
         Projects
       </Text>
 
-      <Wrap mt="1em" direction={"column"} spacing="4">
+      <Wrap mt="1em" direction={"column"} spacing="5">
         {data.projects.map((project) => {
           return (
             <WrapItem key={project.name}>
