@@ -69,8 +69,6 @@ const ProjectItem = ({ project }: any) => {
             <Image
               src={project.image}
               alt={`${project.name} image`}
-              width="500px"
-              height="300px"
               layout="responsive"
             />
           </Box>
@@ -80,7 +78,9 @@ const ProjectItem = ({ project }: any) => {
   );
 };
 
-// react tilt
-// row
+// assignment
+// Add live links to projects
+// change button style??
+// revised row style for projects
 
 export default ProjectItem;

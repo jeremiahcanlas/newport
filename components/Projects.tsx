@@ -9,15 +9,17 @@ const Projects = () => {
         Projects
       </Text>
 
-      <Wrap mt="1em" spacing="5">
-        {data.projects.map((project) => {
-          return (
-            <WrapItem key={project.name}>
-              <ProjectItem project={project} />
-            </WrapItem>
-          );
-        })}
-      </Wrap>
+      <Box width={"100%"}>
+        <Wrap mt="1em" spacing="5">
+          {data.projects.map((project) => {
+            return (
+              <WrapItem key={project.name}>
+                <ProjectItem project={project} />
+              </WrapItem>
+            );
+          })}
+        </Wrap>{" "}
+      </Box>
     </Box>
   );
 };
