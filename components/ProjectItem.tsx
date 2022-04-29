@@ -22,7 +22,7 @@ const ProjectItem = ({ project }: any) => {
     <Stack my={"2em"} direction={["column", "column", "row"]} spacing="6">
       <Container minW={["50%"]} borderRadius="2px" padding="0">
         <Box>
-          <Text fontWeight={"700"} letterSpacing="1px" fontSize="1.2em">
+          <Text fontWeight={"700"} letterSpacing="1px" fontSize="1.5em">
             {project.name}
           </Text>
           <Text lineHeight={"7"} letterSpacing="0.2px" mt="1em">

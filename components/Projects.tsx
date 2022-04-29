@@ -4,7 +4,7 @@ import ProjectItem from "./ProjectItem";
 
 const Projects = () => {
   return (
-    <Box maxW={["90%", "70%"]} mx="auto" height={"100%"}>
+    <Box maxW={["90%", "70%"]} my="20em" mx="auto" height={"100%"}>
       <Text fontSize={"2.2em"} letterSpacing="1px" fontWeight="700">
         Projects
       </Text>
