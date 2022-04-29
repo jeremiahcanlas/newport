@@ -10,15 +10,9 @@ const Projects = () => {
       </Text>
 
       <Box width={"100%"}>
-        <Wrap mt="1em" spacing="5">
-          {data.projects.map((project) => {
-            return (
-              <WrapItem key={project.name}>
-                <ProjectItem project={project} />
-              </WrapItem>
-            );
-          })}
-        </Wrap>{" "}
+        {data.projects.map((project) => {
+          return <ProjectItem key={project.name} project={project} />;
+        })}
       </Box>
     </Box>
   );

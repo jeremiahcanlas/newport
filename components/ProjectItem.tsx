@@ -7,14 +7,19 @@ import {
   WrapItem,
   Stack,
   Text,
+  useColorMode,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import Tilt from "react-tilt";
+import gradient from "../styles/gradients.module.scss";
+import styles from "../styles/projects.module.scss";
 
 // WORK on this one !!
 const ProjectItem = ({ project }: any) => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <Stack direction={["column", "column", "row"]} spacing="6">
+    <Stack my={"2em"} direction={["column", "column", "row"]} spacing="6">
       <Container minW={["50%"]} borderRadius="2px" padding="0">
         <Box>
           <Text fontWeight={"700"} letterSpacing="1px" fontSize="1.2em">
@@ -37,12 +42,26 @@ const ProjectItem = ({ project }: any) => {
           </Wrap>{" "}
         </Box>
         <Stack mt="1em" direction={"row"}>
-          <Button borderRadius="2px" variant="outline">
-            See Live
-          </Button>
-          <Button borderRadius="2px" variant="ghost">
-            Source Code
-          </Button>
+          <a href={project.url} target="_blank" rel="noreferrer">
+            <Button
+              className={
+                colorMode === "light"
+                  ? gradient.lightBGradient
+                  : gradient.darkBGradient
+              }
+            >
+              See Live
+            </Button>
+          </a>
+          <a href={project.repo} target="_blank" rel="noreferrer">
+            <Button
+              borderRadius="2px"
+              variant="ghost"
+              className={styles.buttonstyle}
+            >
+              Source Code
+            </Button>
+          </a>
         </Stack>
       </Container>
       <Container margin="0" p={0}>
@@ -59,28 +78,23 @@ const ProjectItem = ({ project }: any) => {
             easing: "cubic-bezier(.03,.98,.52,.99)",
           }}
         >
-          <Box
-            display="block"
-            border="1px solid white"
-            borderRadius="2px"
-            overflow={"hidden"}
-            w="100%"
-          >
-            <Image
-              src={project.image}
-              alt={`${project.name} image`}
-              layout="responsive"
-            />
-          </Box>
+          <a href={project.url} target="_blank" rel="noreferrer">
+            <Box display="block" border="2px solid white" overflow={"hidden"}>
+              <Image
+                src={project.image}
+                alt={`${project.name} image`}
+                layout="responsive"
+              />
+            </Box>
+          </a>
         </Tilt>
       </Container>
     </Stack>
   );
 };
 
-// assignment
-// Add live links to projects
-// change button style??
-// revised row style for projects
+// assignment*************************************
+
+// revised row style for projects row style is not looking so good
 
 export default ProjectItem;
