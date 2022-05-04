@@ -31,11 +31,16 @@ const ProjectItem = ({ project }: any) => {
         </Box>
 
         <Box mt="1em">
-          <Wrap mt="0.5em" maxW={"90%"} direction={"row"} spacing="2">
+          <Wrap mt="0.5em" maxW={"90%"} direction={"row"} spacing="1.5">
             {project.stack.map((item: string) => {
               return (
                 <WrapItem key={item}>
-                  <Badge>{item}</Badge>
+                  <Badge
+                    variant={colorMode === "light" ? "outline" : "subtle"}
+                    fontSize="0.7em"
+                  >
+                    {item}
+                  </Badge>
                 </WrapItem>
               );
             })}
@@ -92,9 +97,5 @@ const ProjectItem = ({ project }: any) => {
     </Stack>
   );
 };
-
-// assignment*************************************
-
-// revised row style for projects row style is not looking so good
 
 export default ProjectItem;

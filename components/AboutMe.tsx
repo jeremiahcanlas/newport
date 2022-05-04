@@ -1,5 +1,6 @@
 import data from "../public/data/data";
 import { Box, Stack, Text, useColorMode, Button } from "@chakra-ui/react";
+import Link from "next/link";
 import Fade from "react-reveal";
 
 const AboutMe = () => {
@@ -38,14 +39,16 @@ const AboutMe = () => {
           <Text>{data.about.paraThree}</Text>
         </Fade>
       </Stack>
-      <Button
-        mt="3em"
-        mx="1em"
-        borderRadius="2px"
-        _focus={{ outline: "none" }} // this removes chakra ui weird focus border
-      >
-        Résumé
-      </Button>
+      <Link href={"/resume"} passHref>
+        <Button
+          mt="3em"
+          mx="1em"
+          borderRadius="2px"
+          _focus={{ outline: "none" }} // this removes chakra ui weird focus border
+        >
+          Résumé
+        </Button>
+      </Link>
     </Box>
   );
 };
