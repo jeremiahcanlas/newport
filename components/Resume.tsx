@@ -15,7 +15,8 @@ import {
 import data from "../public/data/data";
 
 const Resume = () => {
-  const { name, title, social, technical, employment, projects } = data.resume;
+  const { name, title, social, technical, employment, projects, file } =
+    data.resume;
 
   return (
     <Box height={"100%"}>
@@ -61,23 +62,18 @@ const Resume = () => {
           Technical Skills
         </Text>
 
-        <Stack>
+        <Stack spacing="3">
           {technical.map((item) => (
             <Box key={item.type}>
-              <Text
-                as="h1"
-                fontSize={"1em"}
-                fontWeight={500}
-                letterSpacing="0.6px"
-              >
+              <Text as="h3" fontSize={"1em"} fontWeight={600}>
                 {item.type}
               </Text>
-              <Wrap spacing="2">
+              <Wrap spacing="1">
                 {item.skills.map((skill) => (
                   <WrapItem key={skill}>
-                    <Badge>{skill}</Badge>
+                    <Badge fontSize={"0.7em"}>{skill}</Badge>
                   </WrapItem>
-                ))}{" "}
+                ))}
               </Wrap>
             </Box>
           ))}
@@ -95,7 +91,7 @@ const Resume = () => {
               <Text as="h3" fontSize={"0.8em"}>
                 <b>{job.position}</b>, <i>{job.company}</i>, {job.location}
               </Text>
-              <Badge fontSize={"0.5em"}>
+              <Badge fontSize={"0.7em"}>
                 {job.startDate} - {job.endDate}
               </Badge>
               <Box>
@@ -123,9 +119,12 @@ const Resume = () => {
               <Text fontSize={"1em"} fontWeight={700}>
                 {proj.name}
               </Text>
-              <Text fontSize={"0.8em"} fontStyle="italic">
-                {proj.link}
-              </Text>
+              <Link href={proj.url}>
+                <Text fontSize={"0.8em"} fontStyle="italic">
+                  {proj.link}
+                </Text>
+              </Link>
+
               <UnorderedList>
                 {proj.details.map((dets) => (
                   <ListItem key={dets} fontSize="0.8em">
@@ -142,6 +141,14 @@ const Resume = () => {
           <b>Work Authorization:</b> Canadian Citizen
         </Text>
         <Text fontWeight={600}>*References available upon request.</Text>
+      </Container>
+      <Container>
+        <Text fontSize={"1em"} fontWeight={700}>
+          Need it in PDF?
+        </Text>
+        <Link href={""}>
+          <Text fontSize={"0.8em"}>Download Here</Text>
+        </Link>
       </Container>
     </Box>
   );

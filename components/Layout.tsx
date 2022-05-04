@@ -10,6 +10,7 @@ const Layout = ({ children }: any) => {
       px="0"
       height="100%"
       bg={colorMode === "light" ? "whiteAlpha.300" : "blackAlpha.500"}
+      className="scroll-top"
     >
       {children}
       <Footer />

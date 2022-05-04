@@ -8,7 +8,6 @@ const Hero = () => {
 
   return (
     <Container
-      className="hero-section"
       height="100vh"
       width="100%"
       textAlign="left"

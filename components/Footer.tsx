@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <Container textAlign="center" py="0.8em">
       <Box mb="2em">
-        <LinkScroll to="hero-section" smooth duration={800}>
+        <LinkScroll to="scroll-top" smooth duration={800}>
           <Icon
             as={FaChevronUp}
             color={colorMode === "light" ? "black" : "white"}
