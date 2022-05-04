@@ -52,6 +52,113 @@ const data = {
         url: "https://linkedin.com/in/jeremiahcanlas/",
       },
     ],
+    technical: [
+      {
+        type: "Front End",
+        skills: ["HTML", "CSS/SASS", "Typescript", "Javascript", "Chakra UI"],
+      },
+      {
+        type: "Back End",
+        skills: ["nodejs"],
+      },
+      {
+        type: "Database Management",
+        skills: ["MongoDB", "GraphQL", "Cloudinary"],
+      },
+      {
+        type: "Frameworks",
+        skills: ["React", "NextJS", "GatsbyJS", "Strapi", "Contentful"],
+      },
+      {
+        type: "Version Control",
+        skills: ["git"],
+      },
+      {
+        type: "Other",
+        skills: [
+          "jQuery",
+          "Redux",
+          "npm",
+          "yarn",
+          "JSON",
+          "Postman",
+          "Styled Components",
+        ],
+      },
+    ],
+    employment: [
+      {
+        position: "Web Developer",
+        company: "Independent Freelance",
+        location: "Toronto, ON",
+        startDate: "November 2020",
+        endDate: "Present",
+        objectives: [
+          "Developed responsive web design for clients and testing across multiple browsers, devices, and platforms.",
+          "Client requests are being delivered efficiently and on time.",
+          "Created static sites using HTML, SCSS, JavaScript, and jQuery for a private healthcare company and a local esthetician.",
+        ],
+      },
+      {
+        position: "Assistant Manager",
+        company: "Rogers Communications",
+        location: "Toronto, ON",
+        startDate: "October 2019",
+        endDate: "Present",
+        objectives: [
+          "Encouraged and coached team members to surprise and delight customers and make their experiences memorable.",
+          "Accounted to create and deliver business plans to meet regional, store and employment targets.",
+          "Responsible for recruiting, training, and developing team members.",
+        ],
+      },
+      {
+        position: "Sales Associate",
+        company: "Fido Solutions",
+        location: "London, ON",
+        startDate: "September 2015",
+        endDate: "September 2019",
+        objectives: [
+          "Delivered superior and consistent customer experience.",
+          "Achieved and exceeded sales targets.",
+          "Managed staff responsibilities and store organizations",
+          "Handled customer issues and concerns.",
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: "Through the Woods",
+        link: "throughthewoods.netlify.app",
+        url: "https://throughthewoods.netlify.app",
+
+        details: [
+          "A personal blog app that tracks and highlights discovered hikes across Canada.",
+          "Built using NextJS with Chakra UI, Strapi CMS backend with MongoDB and Cloudinary.",
+          "Authorized users can create, read, update, and delete trail entries.",
+        ],
+      },
+      {
+        name: "Experience Rally",
+        link: "experience-rally.netlify.app",
+        url: "https://experience-rally.netlify.app",
+
+        details: [
+          "Built with create-react-app, styled with SCSS and animations from Framer Motion.",
+          "A front-end focused ecommerce-based website that offers three subscription services for live rally races.",
+          "Contains a hero page, subscription page, checkout page and confirmation page.",
+        ],
+      },
+      {
+        name: "Homepage",
+        link: "jc-homepage.netlify.app",
+        url: "https://jc-homepage.netlify.app",
+        details: [
+          "Built using GatsbyJS static site generator for ReactJS and styled with SCSS.",
+          "A personal homepage with dynamic features like personalized greeting, weather, and random quotes.",
+          "Homepage data is retrieved using Openweather API and Random quote generator API.",
+        ],
+      },
+    ],
   },
 
   projects: [

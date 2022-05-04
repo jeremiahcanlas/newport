@@ -1,19 +1,26 @@
 import {
+  Badge,
   Box,
   Container,
   Divider,
+  Wrap,
+  WrapItem,
   Text,
   Icon,
   Stack,
   Link,
+  UnorderedList,
+  ListItem,
 } from "@chakra-ui/react";
 import data from "../public/data/data";
 
 const Resume = () => {
-  const { name, title, social } = data.resume;
+  const { name, title, social, technical, employment, projects } = data.resume;
 
   return (
-    <Box height={"100vh"}>
+    <Box height={"100%"}>
+      {/*Intro*/}
+
       <Container>
         <Text as="h1" fontSize={"2.2em"} fontWeight={700} letterSpacing="1px">
           {name}
@@ -48,15 +55,93 @@ const Resume = () => {
         </Stack>
       </Container>
       <Divider maxW="90%" mx="auto" my="1.5em" />
+      {/* Technical Skills*/}
       <Container>
-        <Text as="h2" fontWeight={700} fontSize="1.5em" letterSpacing="1px">
+        <Text as="h2" fontWeight={700} fontSize="1.5em" letterSpacing="1.2px">
           Technical Skills
         </Text>
-        {/* 
-        
-      Box > Text + Badges
 
-        */}
+        <Stack>
+          {technical.map((item) => (
+            <Box key={item.type}>
+              <Text
+                as="h1"
+                fontSize={"1em"}
+                fontWeight={500}
+                letterSpacing="0.6px"
+              >
+                {item.type}
+              </Text>
+              <Wrap spacing="2">
+                {item.skills.map((skill) => (
+                  <WrapItem key={skill}>
+                    <Badge>{skill}</Badge>
+                  </WrapItem>
+                ))}{" "}
+              </Wrap>
+            </Box>
+          ))}
+        </Stack>
+      </Container>
+      <Divider maxW="90%" mx="auto" my="1.5em" />
+      {/* Employment/Experience */}
+      <Container>
+        <Text as="h2" fontWeight={700} fontSize="1.5em" letterSpacing="1.2px">
+          Employment
+        </Text>
+        <Stack spacing={4} mt="1em">
+          {employment.map((job) => (
+            <Box key={job.company}>
+              <Text as="h3" fontSize={"0.8em"}>
+                <b>{job.position}</b>, <i>{job.company}</i>, {job.location}
+              </Text>
+              <Badge fontSize={"0.5em"}>
+                {job.startDate} - {job.endDate}
+              </Badge>
+              <Box>
+                <UnorderedList>
+                  {job.objectives.map((obj) => (
+                    <ListItem key={obj} fontSize="0.8em">
+                      {obj}
+                    </ListItem>
+                  ))}
+                </UnorderedList>
+              </Box>
+            </Box>
+          ))}
+        </Stack>
+      </Container>
+      <Divider maxW="90%" mx="auto" my="1.5em" />
+      <Container>
+        <Text as="h2" fontWeight={700} fontSize="1.5em" letterSpacing="1.2px">
+          Projects
+        </Text>
+
+        <Stack mt="1em">
+          {projects.map((proj) => (
+            <Box key={proj.name}>
+              <Text fontSize={"1em"} fontWeight={700}>
+                {proj.name}
+              </Text>
+              <Text fontSize={"0.8em"} fontStyle="italic">
+                {proj.link}
+              </Text>
+              <UnorderedList>
+                {proj.details.map((dets) => (
+                  <ListItem key={dets} fontSize="0.8em">
+                    {dets}
+                  </ListItem>
+                ))}
+              </UnorderedList>
+            </Box>
+          ))}
+        </Stack>
+      </Container>
+      <Container my="1em" fontSize={"0.8em"}>
+        <Text>
+          <b>Work Authorization:</b> Canadian Citizen
+        </Text>
+        <Text fontWeight={600}>*References available upon request.</Text>
       </Container>
     </Box>
   );
