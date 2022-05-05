@@ -68,7 +68,7 @@ const Hero = () => {
             as={motion.button}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition="0.5s ease-in 1s"
+            transition="0.5s ease-in 0.3s"
             size="md"
             mt="0.5em"
             borderWidth={"1px"}

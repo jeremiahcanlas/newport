@@ -1,7 +1,9 @@
 import data from "../public/data/data";
 import { Box, Stack, Text, useColorMode, Button } from "@chakra-ui/react";
 import Link from "next/link";
+import { Link as LinkScroll } from "react-scroll";
 import Fade from "react-reveal";
+import gradient from "../styles/gradients.module.scss";
 
 const AboutMe = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -39,16 +41,38 @@ const AboutMe = () => {
           <Text>{data.about.paraThree}</Text>
         </Fade>
       </Stack>
-      <Link href={"/resume"} passHref>
-        <Button
-          mt="3em"
-          mx="1em"
-          borderRadius="2px"
-          _focus={{ outline: "none" }} // this removes chakra ui weird focus border
-        >
-          Résumé
-        </Button>
-      </Link>
+      <Box mt="3em">
+        <Link href={"/resume"} passHref>
+          <Button
+            mx="1em"
+            borderRadius="2px"
+            _focus={{ outline: "none" }} // this removes chakra ui weird focus border
+            display="block"
+            letterSpacing="1px"
+            variant="outline"
+          >
+            Resume
+          </Button>
+        </Link>
+        <LinkScroll to="project-section" smooth duration={800} offset={-50}>
+          <Button
+            mt="1em"
+            mx="1em"
+            borderRadius="2px"
+            _focus={{ outline: "none" }} // this removes chakra ui weird focus border
+            display="block"
+            letterSpacing="1px"
+            size="lg"
+            className={
+              colorMode === "light"
+                ? gradient.lightBGradient
+                : gradient.darkBGradient
+            }
+          >
+            View Projects
+          </Button>
+        </LinkScroll>
+      </Box>
     </Box>
   );
 };

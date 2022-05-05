@@ -11,11 +11,13 @@ import {
   Link,
   UnorderedList,
   ListItem,
+  Button,
 } from "@chakra-ui/react";
 import data from "../public/data/data";
+import { FaFilePdf } from "react-icons/fa";
 
 const Resume = () => {
-  const { name, title, social, technical, employment, projects, file } =
+  const { name, title, social, technical, employment, projects, resumePath } =
     data.resume;
 
   return (
@@ -62,7 +64,7 @@ const Resume = () => {
           Technical Skills
         </Text>
 
-        <Stack spacing="3">
+        <Stack spacing="3" mt="1em">
           {technical.map((item) => (
             <Box key={item.type}>
               <Text as="h3" fontSize={"1em"} fontWeight={600}>
@@ -136,18 +138,30 @@ const Resume = () => {
           ))}
         </Stack>
       </Container>
-      <Container my="1em" fontSize={"0.8em"}>
+      <Container my="2em" fontSize={"0.8em"}>
         <Text>
           <b>Work Authorization:</b> Canadian Citizen
         </Text>
-        <Text fontWeight={600}>*References available upon request.</Text>
-      </Container>
-      <Container>
-        <Text fontSize={"1em"} fontWeight={700}>
-          Need it in PDF?
+        <Text fontWeight={600} mt="1em">
+          *References available upon request.
         </Text>
-        <Link href={""}>
-          <Text fontSize={"0.8em"}>Download Here</Text>
+      </Container>
+      <Container my="2em">
+        <Box>
+          <Text
+            fontSize={"1em"}
+            fontWeight={700}
+            letterSpacing="1px"
+            display={"inline-block"}
+          >
+            PDF Version
+          </Text>
+        </Box>
+
+        <Link href={resumePath} target="_blank">
+          <Button fontSize={"0.8em"} variant="unstyled">
+            Download Here
+          </Button>
         </Link>
       </Container>
     </Box>

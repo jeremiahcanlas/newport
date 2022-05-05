@@ -1,8 +1,12 @@
 import { useColorMode, Button, Icon, Box } from "@chakra-ui/react";
 import { CgMoon, CgSun } from "react-icons/cg";
+import { AiFillHome } from "react-icons/ai";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Toggle = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const router = useRouter();
 
   return (
     <Box
@@ -17,6 +21,17 @@ const Toggle = () => {
       }
     >
       <Box textAlign={"right"}>
+        {router.pathname === "/resume" && (
+          <Link href={"/"} passHref>
+            <Button
+              variant={"ghost"}
+              size={"md"}
+              _focus={{ outline: "none" }} // this removes chakra ui weird focus border
+            >
+              <Icon fontSize={["1.2em", "2em"]} as={AiFillHome} />
+            </Button>
+          </Link>
+        )}
         <Button
           variant={"ghost"}
           size={"md"}

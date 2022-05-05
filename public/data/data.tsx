@@ -26,6 +26,7 @@ const data = {
   resume: {
     name: "Jeremiah Canlas",
     title: "Web Developer",
+    resumePath: "/resume/resume.pdf",
     social: [
       {
         name: "email",
