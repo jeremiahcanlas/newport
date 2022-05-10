@@ -19,7 +19,7 @@ const Projects = () => {
       <Box width={"100%"}>
         {data.projects.map((project) => {
           return (
-            <Fade key={project.name}>
+            <Fade key={project.name} delay={500}>
               <ProjectItem key={project.name} project={project} />
             </Fade>
           );
