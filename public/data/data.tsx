@@ -2,6 +2,8 @@
 import ttw from "../../assett/ttw.png";
 import rally from "../../assett/rally.png";
 import hp from "../../assett/hp.png";
+import prt from "../../assett/prt.png";
+import prt2 from "../../assett/prt2.png";
 import { SiGmail } from "react-icons/si";
 import { IoGlobeOutline, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 
@@ -163,6 +165,24 @@ const data = {
   },
 
   projects: [
+    {
+      name: "Portfolio",
+      info1:
+        "A personal portfolio that highlights all my work and shows my individuality as a developer. Utilizes Nextjs",
+      info2: "",
+      stack: [
+        "NextJS",
+        "ChakraUI",
+        "Axios",
+        "Framer Motion",
+        "Formik",
+        "Typescript",
+      ],
+      url: "https://throughthewoods.netlify.app",
+      repo: "https://github.com/jeremiahcanlas/through-the-woods",
+      image: prt,
+      image2: prt2,
+    },
     {
       name: "Through the Woods",
       info1:

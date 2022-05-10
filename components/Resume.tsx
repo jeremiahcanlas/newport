@@ -14,7 +14,6 @@ import {
   Button,
 } from "@chakra-ui/react";
 import data from "../public/data/data";
-import { FaFilePdf } from "react-icons/fa";
 
 const Resume = () => {
   const { name, title, social, technical, employment, projects, resumePath } =
@@ -31,10 +30,15 @@ const Resume = () => {
         <Text fontSize={"0.8em"} fontWeight={500} letterSpacing="0.7px">
           {title.toUpperCase()}
         </Text>
-        <Stack mt="1em" spacing="3">
+        <Stack
+          mt="1em"
+          spacing="3"
+          direction={["column", "column", "row"]}
+          width="100%"
+        >
           {social.map((item) => {
             return (
-              <Box key={item.name}>
+              <Stack key={item.name} direction="row">
                 <Icon as={item.icon} display="inline-block" />
                 <Text
                   fontSize={"0.8em"}
@@ -52,7 +56,7 @@ const Resume = () => {
                     {item.username}
                   </Link>
                 </Text>
-              </Box>
+              </Stack>
             );
           })}
         </Stack>
@@ -136,16 +140,17 @@ const Resume = () => {
               </UnorderedList>
             </Box>
           ))}
+          <Box fontSize={"0.8em"}>
+            <Text mt="2em">
+              <b>Work Authorization:</b> Canadian Citizen
+            </Text>
+            <Text fontWeight={600} mt="1em">
+              *References available upon request.
+            </Text>
+          </Box>
         </Stack>
       </Container>
-      <Container my="2em" fontSize={"0.8em"}>
-        <Text>
-          <b>Work Authorization:</b> Canadian Citizen
-        </Text>
-        <Text fontWeight={600} mt="1em">
-          *References available upon request.
-        </Text>
-      </Container>
+
       <Container my="2em">
         <Box>
           <Text
