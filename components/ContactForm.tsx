@@ -24,7 +24,7 @@ const ContactForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
-  const router = useRouter();
+  // const router = useRouter();
 
   const [isSubmitted, setSubmitted] = useState(false);
 
