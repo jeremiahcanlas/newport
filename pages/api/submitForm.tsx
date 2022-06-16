@@ -6,7 +6,7 @@ sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, body } = req.body;
 
-  // console.log(process.env.SENDGRID_KEY);
+  console.log(process.env.SENDGRID_KEY);
   try {
     // console.log("REQ.BODY", req.body);
     await sendgrid.send({

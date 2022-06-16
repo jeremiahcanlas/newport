@@ -89,11 +89,23 @@ const data = {
     ],
     employment: [
       {
+        position: "Frontend Developer",
+        company: "Quarter4 Inc.",
+        location: "Toronto, ON",
+        startDate: "June 2022",
+        endDate: "Present",
+        objectives: [
+          "Design and Implemented user interface for B2B client dashboard",
+          "Participated in ideation sessions to deliver the most progressive and effective user interface solutions for leading edge technology and data deliver",
+          "Developed secured, high-availability, scalable web applications.",
+        ],
+      },
+      {
         position: "Web Developer",
         company: "Independent Freelance",
         location: "Toronto, ON",
         startDate: "November 2020",
-        endDate: "Present",
+        endDate: "Presnent",
         objectives: [
           "Developed responsive web design for clients and testing across multiple browsers, devices, and platforms.",
           "Client requests are being delivered efficiently and on time.",
@@ -105,26 +117,26 @@ const data = {
         company: "Rogers Communications",
         location: "Toronto, ON",
         startDate: "October 2019",
-        endDate: "Present",
+        endDate: "May 2022",
         objectives: [
           "Encouraged and coached team members to surprise and delight customers and make their experiences memorable.",
           "Accounted to create and deliver business plans to meet regional, store and employment targets.",
           "Responsible for recruiting, training, and developing team members.",
         ],
       },
-      {
-        position: "Sales Associate",
-        company: "Fido Solutions",
-        location: "London, ON",
-        startDate: "September 2015",
-        endDate: "September 2019",
-        objectives: [
-          "Delivered superior and consistent customer experience.",
-          "Achieved and exceeded sales targets.",
-          "Managed staff responsibilities and store organizations",
-          "Handled customer issues and concerns.",
-        ],
-      },
+      // {
+      //   position: "Sales Associate",
+      //   company: "Fido Solutions",
+      //   location: "London, ON",
+      //   startDate: "September 2015",
+      //   endDate: "September 2019",
+      //   objectives: [
+      //     "Delivered superior and consistent customer experience.",
+      //     "Achieved and exceeded sales targets.",
+      //     "Managed staff responsibilities and store organizations",
+      //     "Handled customer issues and concerns.",
+      //   ],
+      // },
     ],
     projects: [
       {

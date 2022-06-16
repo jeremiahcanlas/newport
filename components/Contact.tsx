@@ -2,6 +2,7 @@ import { Box, Container, Stack, Text } from "@chakra-ui/react";
 import ContactForm from "./ContactForm";
 
 const Contact = () => {
+  console.log(process.env.SENDGRID_API_KEY);
   return (
     <Box height={"30vh"} maxW={["100%", "70%", "50%"]} mt="2em" mx="auto">
       <Stack direction={["column", "row"]}>
