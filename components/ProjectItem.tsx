@@ -13,6 +13,7 @@ import Image from "next/image";
 import Tilt from "react-tilt";
 import gradient from "../styles/gradients.module.scss";
 import styles from "../styles/projects.module.scss";
+import Fade from "react-reveal";
 
 // WORK on this one !!
 const ProjectItem = ({ project }: any) => {
@@ -86,7 +87,13 @@ const ProjectItem = ({ project }: any) => {
           <a href={project.url} target="_blank" rel="noreferrer">
             <Box display="block" border="2px solid white" overflow={"hidden"}>
               <Image
-                src={project.image}
+                // src={project.image}
+                // eslint-disable-next-line react/jsx-no-duplicate-props
+                src={
+                  project.image2 && colorMode === "light"
+                    ? project.image2
+                    : project.image
+                }
                 alt={`${project.name} image`}
                 layout="responsive"
               />

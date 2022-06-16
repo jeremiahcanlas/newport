@@ -14,7 +14,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import { Formik, Form } from "formik";
 import FormField from "./FormField";
 import * as Yup from "yup";
@@ -24,7 +23,6 @@ const ContactForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const toast = useToast();
-  const router = useRouter();
 
   const [isSubmitted, setSubmitted] = useState(false);
 

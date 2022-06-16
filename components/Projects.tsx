@@ -1,6 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import data from "../public/data/data";
 import ProjectItem from "./ProjectItem";
+import Fade from "react-reveal";
 
 const Projects = () => {
   return (
@@ -17,7 +18,11 @@ const Projects = () => {
 
       <Box width={"100%"}>
         {data.projects.map((project) => {
-          return <ProjectItem key={project.name} project={project} />;
+          return (
+            <Fade key={project.name} delay={500}>
+              <ProjectItem key={project.name} project={project} />
+            </Fade>
+          );
         })}
       </Box>
     </Box>
