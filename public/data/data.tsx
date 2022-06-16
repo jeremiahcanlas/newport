@@ -107,7 +107,7 @@ const data = {
         company: "Independent Freelance",
         location: "Toronto, ON",
         startDate: "November 2020",
-        endDate: "Presnent",
+        endDate: "Present",
         objectives: [
           "Developed responsive web design for clients and testing across multiple browsers, devices, and platforms.",
           "Client requests are being delivered efficiently and on time.",
