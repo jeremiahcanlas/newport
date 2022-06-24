@@ -4,6 +4,8 @@ import rally from "../../assett/rally.png";
 import hp from "../../assett/hp.png";
 import prt from "../../assett/prt.png";
 import prt2 from "../../assett/prt2.png";
+import nty1 from "../../assett/nty1.png";
+import nty2 from "../../assett/nty2.png";
 import { SiGmail } from "react-icons/si";
 import { IoGlobeOutline, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 
@@ -126,21 +128,19 @@ const data = {
           "Responsible for recruiting, training, and developing team members.",
         ],
       },
-      // {
-      //   position: "Sales Associate",
-      //   company: "Fido Solutions",
-      //   location: "London, ON",
-      //   startDate: "September 2015",
-      //   endDate: "September 2019",
-      //   objectives: [
-      //     "Delivered superior and consistent customer experience.",
-      //     "Achieved and exceeded sales targets.",
-      //     "Managed staff responsibilities and store organizations",
-      //     "Handled customer issues and concerns.",
-      //   ],
-      // },
     ],
     projects: [
+      {
+        name: "Newty",
+        link: "newty.netlify.app",
+        url: "https://newty.vercel.app",
+
+        details: [
+          "A focus timer that is based off a time management system called the Pomodoro Technique.",
+          "Built using NextJS with Chakra UI, and Redux for state management.",
+          "Encourages people to work with the time they have rather than against it.",
+        ],
+      },
       {
         name: "Through the Woods",
         link: "throughthewoods.netlify.app",
@@ -178,6 +178,17 @@ const data = {
 
   projects: [
     {
+      name: "Newty",
+      info1:
+        "Newty is a focus timer that is based off a time management system called the Pomodoro Technique. This technique encourages people to work with the time they have rather than against it. These work time are broken into chunks separated by breaks. These intervals are reffered to as pomodoros.",
+      info2: "",
+      stack: ["NextJS", "Redux", "ChakraUI", "Framer Motion", "Typescript"],
+      url: "https://newty.vercel.app",
+      repo: "https://github.com/jeremiahcanlas/newty",
+      image: nty2,
+      image2: nty1,
+    },
+    {
       name: "Portfolio",
       info1:
         "A personal portfolio that highlights all my work and shows my individuality as a developer. Utilizes Nextjs",
@@ -190,8 +201,8 @@ const data = {
         "Formik",
         "Typescript",
       ],
-      url: "https://throughthewoods.netlify.app",
-      repo: "https://github.com/jeremiahcanlas/through-the-woods",
+      url: "https://jeremiahcanlas.com",
+      repo: "https://github.com/jeremiahcanlas/newport",
       image: prt,
       image2: prt2,
     },

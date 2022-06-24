@@ -7,6 +7,7 @@ import gradient from "../styles/gradients.module.scss";
 
 const AboutMe = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const { about } = data;
 
   return (
     <Box id="about" my="3em" width={["100%", "100%", "60%"]} mx="auto">
@@ -28,17 +29,17 @@ const AboutMe = () => {
             }
             bgClip="text"
           >
-            {data.about.title}
+            {about.title}
           </Text>
         </Fade>
         <Fade delay={200} duration={1000}>
-          <Text>{data.about.paraOne}</Text>
+          <Text>{about.paraOne}</Text>
         </Fade>
         <Fade delay={200} duration={1000}>
-          <Text>{data.about.paraTwo}</Text>
+          <Text>{about.paraTwo}</Text>
         </Fade>
         <Fade delay={200} duration={1000}>
-          <Text>{data.about.paraThree}</Text>
+          <Text>{about.paraThree}</Text>
         </Fade>
       </Stack>
       <Box mt="3em">

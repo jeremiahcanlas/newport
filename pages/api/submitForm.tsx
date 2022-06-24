@@ -6,7 +6,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, body } = req.body;
 
   //this will verify api token to sendgrid so clients can send me emails automatically.
-  await sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
+  sendgrid.setApiKey(process.env.SENDGRID_API_KEY as string);
 
   try {
     console.log("REQ.BODY", req.body);
@@ -22,9 +22,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       
       `,
     });
-  } catch (e) {
-    console.log({ e });
-    return res.status(500).json({ error: "error" });
+  } catch (e: any) {
+    console.log(e.response.body.errors[0].message);
+    return res.status(500).json({ error: e.response.body.errors[0].message });
   }
 
   return res.status(200).json({ error: "" });
