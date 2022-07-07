@@ -6,6 +6,7 @@ import {
   Wrap,
   WrapItem,
   Stack,
+  Skeleton,
   Text,
   useColorMode,
 } from "@chakra-ui/react";
@@ -13,11 +14,9 @@ import Image from "next/image";
 import Tilt from "react-tilt";
 import gradient from "../styles/gradients.module.scss";
 import styles from "../styles/projects.module.scss";
-import Fade from "react-reveal";
 
-// WORK on this one !!
 const ProjectItem = ({ project }: any) => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
 
   return (
     <Stack my={"2em"} direction={["column", "column", "row"]} spacing="6">
@@ -70,6 +69,7 @@ const ProjectItem = ({ project }: any) => {
           </a>
         </Stack>
       </Container>
+
       <Container margin="0" p={0}>
         <Tilt
           options={{
@@ -87,7 +87,6 @@ const ProjectItem = ({ project }: any) => {
           <a href={project.url} target="_blank" rel="noreferrer">
             <Box display="block" border="2px solid white" overflow={"hidden"}>
               <Image
-                // src={project.image}
                 // eslint-disable-next-line react/jsx-no-duplicate-props
                 src={
                   project.image2 && colorMode === "light"
@@ -96,6 +95,7 @@ const ProjectItem = ({ project }: any) => {
                 }
                 alt={`${project.name} image`}
                 layout="responsive"
+                priority
               />
             </Box>
           </a>

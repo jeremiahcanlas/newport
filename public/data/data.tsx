@@ -191,7 +191,7 @@ const data = {
     {
       name: "Portfolio",
       info1:
-        "A personal portfolio that highlights all my work and shows my individuality as a developer. Utilizes Nextjs",
+        "A personal portfolio that highlights all my work and shows my individuality as a developer.",
       info2: "",
       stack: [
         "NextJS",
