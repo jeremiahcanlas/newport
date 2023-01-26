@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import data from "../public/data/data";
 
+// Digital Resume
 const Resume = () => {
   const { name, title, social, technical, employment, projects, resumePath } =
     data.resume;
