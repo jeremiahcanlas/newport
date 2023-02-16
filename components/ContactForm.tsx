@@ -85,6 +85,7 @@ const ContactForm = () => {
         borderRadius="2px"
         onClick={onOpen}
         mt="2em"
+        disabled
         _focus={{ outline: "none" }} // this removes chakra ui weird focus border
       >
         Reach me
