@@ -6,7 +6,9 @@ const Meta = ({ title, keywords, description }: any) => (
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
+    <meta name="robots" content="noindex" />
     <link rel="shortcut icon" href="/icon.ico" type="image/x-icon" />
+
     <title>{title}</title>
   </Head>
 );
