@@ -51,7 +51,6 @@ const AboutMe = () => {
             display="block"
             letterSpacing="1px"
             variant="outline"
-            disabled
           >
             Resume
           </Button>
