@@ -19,11 +19,12 @@ const data = {
 
   about: {
     title: "A little bit more about me...",
-    paraOne: "My name is Jeremiah, I am a front end web developer.",
+    paraOne:
+      "Greetings! I'm Jeremiah, a dedicated front-end web developer driven by an insatiable curiosity for learning and a passion for creativity.",
     paraTwo:
-      "I'm a highly motivated developer with a burning passion for learning, creativity, and a keen eye for perfecting the smallest of details. In my spare time, I take great pleasure in long and strenous hikes. Every hiking trail is unique and varies in difficulty, however, it must be finished. This experience allows me to develop patience, discipline, and to approach all my work's overall structure and design with the same mindset and intensity.",
+      "My commitment to perfecting even the minutest details stems from a love for both the art and science of coding. Beyond the screen, I find solace and inspiration in challenging, lengthy hikes—each trail, a unique journey requiring patience and discipline, qualities that echo in my approach to crafting seamless and aesthetically pleasing web solutions.",
     paraThree:
-      "I specialize in front end development with a solid foundation in back end, solving complex problems with elegantly simple solutions one line at a time.",
+      "With a solid foundation in front-end & back-end development, I specialize in solving complex problems with elegantly simple solutions, all while embracing the intensity and mindfulness cultivated on the trails.",
   },
 
   resume: {
@@ -49,12 +50,12 @@ const data = {
         username: "jeremiahcanlas",
         url: "https://github.com/jeremiahcanlas",
       },
-      // {
-      // 	name: "linkedin",
-      // 	icon: IoLogoLinkedin,
-      // 	username: "in/jeremiahcanlas",
-      // 	url: "https://linkedin.com/in/jeremiahcanlas/",
-      // },
+      {
+        name: "linkedin",
+        icon: IoLogoLinkedin,
+        username: "in/jeremiahcanlas",
+        url: "https://linkedin.com/in/jeremiahcanlas/",
+      },
     ],
     technical: [
       {
@@ -102,8 +103,8 @@ const data = {
         startDate: "June 2022",
         endDate: "Present",
         objectives: [
-          "Design and Implemented user interface for B2B client dashboard",
-          "Participated in ideation sessions to deliver the most progressive and effective user interface solutions for leading edge technology and data deliver",
+          "Designed and implemented the user interface for a B2B client dashboard, focusing on delivering progressive and effective solutions for cutting-edge technology and data delivery.",
+          "Actively participated in ideation sessions to contribute to innovative user interface solutions.",
           "Developed secured, high-availability, scalable web applications.",
         ],
       },
@@ -114,8 +115,8 @@ const data = {
         startDate: "November 2020",
         endDate: "Present",
         objectives: [
-          "Developed responsive web design for clients and testing across multiple browsers, devices, and platforms.",
-          "Client requests are being delivered efficiently and on time.",
+          "Developed responsive web designs for clients, ensuring compatibility across multiple browsers, devices, and platforms.",
+          "Efficiently delivered client requests within established timelines.",
           "Created static sites using HTML, SCSS, JavaScript, and jQuery for a private healthcare company and a local esthetician.",
         ],
       },
@@ -126,8 +127,8 @@ const data = {
         startDate: "October 2019",
         endDate: "May 2022",
         objectives: [
-          "Encouraged and coached team members to surprise and delight customers and make their experiences memorable.",
-          "Accounted to create and deliver business plans to meet regional, store and employment targets.",
+          "Coached and motivated team members to provide exceptional customer experiences.",
+          "Developed and executed business plans to achieve regional, store, and employment targets.",
           "Responsible for recruiting, training, and developing team members.",
         ],
       },
@@ -139,9 +140,8 @@ const data = {
         url: "https://newty.vercel.app",
 
         details: [
-          "A focus timer that is based off a time management system called the Pomodoro Technique.",
-          "Built using NextJS with Chakra UI, and Redux for state management.",
-          "Encourages people to work with the time they have rather than against it.",
+          "Focus timer based on the Pomodoro Technique, built using NextJS with Chakra UI, and Redux for state management.",
+          "Encourages effective time management and productivity.",
         ],
       },
       {
@@ -150,8 +150,8 @@ const data = {
         url: "https://throughthewoods.netlify.app",
 
         details: [
-          "A personal blog app that tracks and highlights discovered hikes across Canada.",
-          "Built using NextJS with Chakra UI, Strapi CMS backend with MongoDB and Cloudinary.",
+          "Personal blog app tracking and highlighting discovered hikes across Canada.",
+          "Built using NextJS, Chakra UI, Strapi CMS backend with MongoDB, and Cloudinary.",
           "Authorized users can create, read, update, and delete trail entries.",
         ],
       },
@@ -161,9 +161,8 @@ const data = {
         url: "https://experience-rally.netlify.app",
 
         details: [
-          "Built with create-react-app, styled with SCSS and animations from Framer Motion.",
-          "A front-end focused ecommerce-based website that offers three subscription services for live rally races.",
-          "Contains a hero page, subscription page, checkout page and confirmation page.",
+          "Front-end focused ecommerce-based website built with create-react-app, styled with SCSS, and animations from Framer Motion.",
+          "Offers three subscription services for live rally races, featuring a hero page, subscription page, checkout page, and confirmation page.",
         ],
       },
       {
@@ -171,9 +170,9 @@ const data = {
         link: "jc-homepage.netlify.app",
         url: "https://jc-homepage.netlify.app",
         details: [
-          "Built using GatsbyJS static site generator for ReactJS and styled with SCSS.",
-          "A personal homepage with dynamic features like personalized greeting, weather, and random quotes.",
-          "Homepage data is retrieved using Openweather API and Random quote generator API.",
+          "Personal homepage built using GatsbyJS static site generator for ReactJS, styled with SCSS.",
+          "Features dynamic elements like personalized greeting, weather information, and random quotes.",
+          "Retrieves data using Openweather API and Random quote generator API.",
         ],
       },
     ],
@@ -183,7 +182,7 @@ const data = {
     {
       name: "Newty",
       info1:
-        "Newty is a focus timer that is based off a time management system called the Pomodoro Technique. This technique encourages people to work with the time they have rather than against it. These work time are broken into chunks separated by breaks. These intervals are reffered to as pomodoros.",
+        'Discover Newty, a dynamic focus timer rooted in the Pomodoro Technique—a time management system designed to empower individuals to collaborate effectively with time rather than resist it. Unleash your productivity as work periods are thoughtfully organized into manageable chunks, each interspersed with rejuvenating breaks, aptly referred to as "pomodoros". Embrace a harmonious workflow that maximizes concentration and enhances overall efficiency through this innovative time management solution.',
       info2: "",
       stack: ["NextJS", "Redux", "ChakraUI", "Framer Motion", "Typescript"],
       url: "https://newty.vercel.app",
@@ -194,7 +193,7 @@ const data = {
     {
       name: "Portfolio",
       info1:
-        "A personal portfolio that highlights all my work and shows my unique approach as a web developer.",
+        "An immersive showcase demonstrating my proficiency in ReactJS, NextJS, and Chakra UI, capturing the essence of diverse projects—from dynamic e-commerce sites to personalized homepages. Explore the intersection of design and functionality, showcasing my unique approach to problem-solving and user-centric development.",
       info2: "",
       stack: [
         "NextJS",
@@ -212,7 +211,7 @@ const data = {
     {
       name: "Through the Woods",
       info1:
-        "A personal blog app that tracks and highlights explored trails. Authorized users can create, update and delete trail entries. A full CRUD application that utilizes NextJS with ChakraUI, Strapi CMS backend with MongoDB and Cloudinary.",
+        "Embark on a journey through my personal blog app, meticulously designed to track and highlight discovered trails. Engage with a full CRUD application, empowering authorized users to seamlessly create, update, and delete trail entries. This project harmoniously blends NextJS with Chakra UI, complemented by a Strapi CMS backend powered by MongoDB and Cloudinary, showcasing the synergy of innovation and functionality.",
       info2: "",
       stack: [
         "NextJS",
@@ -231,7 +230,7 @@ const data = {
     {
       name: "Experience Rally",
       info1:
-        "A subscription based website that offers three subscription services for live rally races. It contains a hero page along with additional information, subscription package page and a checkout page.",
+        "Embark on an exhilarating journey with Experience Rally, a subscription-based website offering three distinct subscription services for live rally races. Navigate through a captivating hero page filled with immersive content, explore detailed subscription packages, and seamlessly proceed to checkout. Immerse yourself in the world of rally racing through this dynamic web platform that combines information, subscription options, and a user-friendly checkout experience.",
       info2: "",
       stack: [
         "HTML5",
@@ -249,7 +248,7 @@ const data = {
     {
       name: "Homepage",
       info1:
-        "A custom homepage with a dynamic background, random quote generator, current weather, personalized greeting, current time & date. The data comes from openweather API and random quote generator API.",
+        "Experience a personalized touch with the Homepage project—a custom homepage featuring a dynamic background, a random quote generator, current weather updates, personalized greetings, and real-time display of the current time and date. The magic lies in data sourced from the OpenWeather API and a Random Quote Generator API, creating a dynamic and engaging user experience that combines aesthetics with real-time information.",
       info2: "",
       stack: [
         "HTML5",

@@ -43,7 +43,7 @@ const Footer = () => {
             _hover={{ opacity: "1", color: "smoke" }}
           />
         </Link>
-        {/* <Link
+        <Link
           href="https://linkedin.com/in/jeremiahcanlas"
           isExternal
           cursor="pointer"
@@ -57,7 +57,7 @@ const Footer = () => {
             opacity="0.8"
             _hover={{ opacity: "1", color: "smoke" }}
           />
-        </Link> */}
+        </Link>
       </HStack>
 
       <Text fontWeight="300" fontSize="0.8em" letterSpacing="0.8px">
