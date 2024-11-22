@@ -4,8 +4,9 @@ import Meta from "../components/Meta";
 import Hero from "../components/Hero";
 import AboutMe from "../components/AboutMe";
 import Projects from "../components/Projects";
-import Contact from "../components/Contact";
+// import Contact from "../components/Contact";
 import Toggle from "../components/Toggle";
+
 
 const Home: NextPage = () => {
   return (

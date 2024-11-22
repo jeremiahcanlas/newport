@@ -1,26 +1,30 @@
-import { Box, Text } from "@chakra-ui/react";
-import data from "../public/data/data";
-import ProjectItem from "./ProjectItem";
-import Fade from "react-reveal";
+import { Box, Text } from '@chakra-ui/react';
+import portfolioData from '../public/data/data.json';
+import ProjectItem from './ProjectItem';
+import Fade from 'react-reveal';
 
 const Projects = () => {
+  const { projects } = portfolioData;
+
   return (
     <Box
       className="project-section"
-      maxW={["90%", "70%"]}
+      maxW={['90%', '70%']}
       my="20em"
       mx="auto"
-      height={"100%"}
+      height={'100%'}
     >
-      <Text fontSize={"2.2em"} letterSpacing="1px" fontWeight="700">
+      <Text
+        style={{ letterSpacing: '1px', fontWeight: 700, fontSize: '2.2em' }}
+      >
         Projects
       </Text>
 
-      <Box width={"100%"}>
-        {data.projects.map((project) => {
+      <Box width={'100%'}>
+        {projects.map((project) => {
           return (
             <Fade key={project.name} delay={500}>
-              <ProjectItem key={project.name} project={project} />
+              <ProjectItem project={project} />
             </Fade>
           );
         })}

@@ -6,37 +6,36 @@ import {
   Wrap,
   WrapItem,
   Stack,
-  Skeleton,
   Text,
   useColorMode,
-} from "@chakra-ui/react";
-import Image from "next/image";
-import Tilt from "react-tilt";
-import gradient from "../styles/gradients.module.scss";
-import styles from "../styles/projects.module.scss";
+} from '@chakra-ui/react';
+import Image from 'next/image';
+import Tilt from 'react-tilt';
+import gradient from '../styles/gradients.module.scss';
+import styles from '../styles/projects.module.scss';
 
 const ProjectItem = ({ project }: any) => {
   const { colorMode } = useColorMode();
 
   return (
-    <Stack my={"2em"} direction={["column", "column", "row"]} spacing="6">
-      <Container minW={["50%"]} borderRadius="2px" padding="0">
+    <Stack my={'2em'} direction={['column', 'column', 'row']} spacing="6">
+      <Container minW={['50%']} borderRadius="2px" padding="0">
         <Box>
-          <Text fontWeight={"700"} letterSpacing="1px" fontSize="1.5em">
+          <Text fontWeight={'700'} letterSpacing="1px" fontSize="1.5em">
             {project.name}
           </Text>
-          <Text lineHeight={"7"} letterSpacing="0.2px" mt="1em">
-            {project.info1}
+          <Text lineHeight={'7'} letterSpacing="0.2px" mt="1em">
+            {project.details}
           </Text>
         </Box>
 
         <Box mt="1em">
-          <Wrap mt="0.5em" maxW={"90%"} direction={"row"} spacing="1.5">
+          <Wrap mt="0.5em" maxW={'90%'} direction={'row'} spacing="1.5">
             {project.stack.map((item: string) => {
               return (
                 <WrapItem key={item}>
                   <Badge
-                    variant={colorMode === "light" ? "outline" : "subtle"}
+                    variant={colorMode === 'light' ? 'outline' : 'subtle'}
                     fontSize="0.7em"
                   >
                     {item}
@@ -44,13 +43,13 @@ const ProjectItem = ({ project }: any) => {
                 </WrapItem>
               );
             })}
-          </Wrap>{" "}
+          </Wrap>{' '}
         </Box>
-        <Stack mt="1em" direction={"row"}>
+        <Stack mt="1em" direction={'row'}>
           <a href={project.url} target="_blank" rel="noreferrer">
             <Button
               className={
-                colorMode === "light"
+                colorMode === 'light'
                   ? gradient.lightBGradient
                   : gradient.darkBGradient
               }
@@ -81,18 +80,19 @@ const ProjectItem = ({ project }: any) => {
             transition: true,
             axis: null,
             reset: true,
-            easing: "cubic-bezier(.03,.98,.52,.99)",
+            easing: 'cubic-bezier(.03,.98,.52,.99)',
           }}
         >
           <a href={project.url} target="_blank" rel="noreferrer">
-            <Box display="block" border="2px solid white" overflow={"hidden"}>
+            <Box display="block" border="2px solid white" overflow={'hidden'}>
               <Image
-                // eslint-disable-next-line react/jsx-no-duplicate-props
                 src={
-                  project.image2 && colorMode === "light"
-                    ? project.image2
+                  project.altImage && colorMode === 'light'
+                    ? project.altImage
                     : project.image
                 }
+                width="40"
+                height="40"
                 alt={`${project.name} image`}
                 layout="responsive"
                 priority

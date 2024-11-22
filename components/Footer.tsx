@@ -6,12 +6,15 @@ import {
   Icon,
   HStack,
   useColorMode,
-} from "@chakra-ui/react";
-import { Link as LinkScroll } from "react-scroll";
-import { FaGithub, FaLinkedin, FaChevronUp } from "react-icons/fa";
+} from '@chakra-ui/react';
+import { Link as LinkScroll } from 'react-scroll';
+import { FaGithub, FaLinkedin, FaChevronUp } from 'react-icons/fa';
+import portfolioData from '../public/data/data.json';
 
 const Footer = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
+
+  const { resume } = portfolioData;
 
   return (
     <Container textAlign="center" py="0.8em">
@@ -19,35 +22,35 @@ const Footer = () => {
         <LinkScroll to="scroll-top" smooth duration={800}>
           <Icon
             as={FaChevronUp}
-            color={colorMode === "light" ? "black" : "white"}
+            color={colorMode === 'light' ? 'black' : 'white'}
             fontSize="1em"
             cursor="pointer"
           />
         </LinkScroll>
 
-        <Text fontSize={"0.8em"}>Back to Top</Text>
+        <Text fontSize={'0.8em'}>Back to Top</Text>
       </Box>
-      <HStack spacing={"1.5em"} justify="center" mx="auto">
+      <HStack spacing={'1.5em'} justify="center" mx="auto">
         <Link
           href="https://github.com/jeremiahcanlas"
           isExternal
           cursor="pointer"
-          _focus={{ outline: "none" }}
+          _focus={{ outline: 'none' }}
         >
           <Icon
             as={FaGithub}
-            color={colorMode === "light" ? "black" : "white"}
+            color={colorMode === 'light' ? 'black' : 'white'}
             fontSize="2em"
             mb="1em"
             opacity="0.8"
-            _hover={{ opacity: "1", color: "smoke" }}
+            _hover={{ opacity: '1', color: 'smoke' }}
           />
         </Link>
         <Link
           href="https://linkedin.com/in/jeremiahcanlas"
           isExternal
           cursor="pointer"
-          _focus={{ outline: "none" }}
+          _focus={{ outline: 'none' }}
         >
           <Icon
             as={FaLinkedin}
@@ -55,13 +58,13 @@ const Footer = () => {
             fontSize="2em"
             mb="1em"
             opacity="0.8"
-            _hover={{ opacity: "1", color: "smoke" }}
+            _hover={{ opacity: '1', color: 'smoke' }}
           />
         </Link>
       </HStack>
 
       <Text fontWeight="300" fontSize="0.8em" letterSpacing="0.8px">
-        {new Date().getFullYear()} Jeremiah Canlas
+        {new Date().getFullYear()} {resume.name}
       </Text>
     </Container>
   );

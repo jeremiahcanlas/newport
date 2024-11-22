@@ -1,10 +1,11 @@
 import { Container, Box, Text, useColorMode, Button } from "@chakra-ui/react";
-import data from "../public/data/data";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+import portfolioData from '../public/data/data.json'
 
 const Hero = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const {colorMode} = useColorMode();
+  const {hero}= portfolioData
 
   return (
     <Container
@@ -25,7 +26,7 @@ const Hero = () => {
       >
         <Box letterSpacing="1px">
           <Text fontWeight={500} fontSize={["1.5em", "2.1em"]}>
-            {data.hero.intro}
+            {hero.intro}
           </Text>
           <Text
             lineHeight={1}
@@ -39,7 +40,7 @@ const Hero = () => {
             letterSpacing="1.5px"
             fontSize={["2.7em", "3em"]}
           >
-            {data.hero.name}
+            {hero.name}
           </Text>{" "}
         </Box>
 
@@ -50,17 +51,7 @@ const Hero = () => {
           fontSize={["2.5em", "3em"]}
         >
           <Text fontSize={"0.4em"} lineHeight="5">
-            {data.hero.info}
-          </Text>
-
-          <Text
-            visibility={colorMode === "dark" ? "visible" : "hidden"}
-            lineHeight="8"
-            fontSize={"0.4em"}
-            bgGradient={"linear(to-l, #3bcfd4 50%,#fc9305,#f20094)"}
-            bgClip="text"
-          >
-            {data.hero.infoDark}
+            {hero.info}
           </Text>
         </Box>
         <Link to="about" smooth duration={800} offset={-50}>

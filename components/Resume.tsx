@@ -12,45 +12,66 @@ import {
   UnorderedList,
   ListItem,
   Button,
-} from "@chakra-ui/react";
-import data from "../public/data/data";
+} from '@chakra-ui/react';
+import data from '../public/data/data';
+import portfolioData from '../public/data/data.json';
+import { FaDownload } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
+import { IoGlobeOutline, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
 
 // Digital Resume
 const Resume = () => {
+  const { resume } = portfolioData;
+
   const { name, title, social, technical, employment, projects, resumePath } =
-    data.resume;
+    resume;
+
+  const mapIcon = (name: string) => {
+    switch (name) {
+      case 'email':
+        return SiGmail;
+      case 'website':
+        return IoGlobeOutline;
+      case 'github':
+        return IoLogoGithub;
+      case 'linkedin':
+        return IoLogoLinkedin;
+      default:
+        break;
+    }
+  };
 
   return (
-    <Box height={"100%"}>
+    <Box height={'100%'}>
       {/*Intro*/}
 
       <Container>
-        <Text as="h1" fontSize={"2.2em"} fontWeight={700} letterSpacing="1px">
+        <Text as="h1" fontSize={'2.2em'} fontWeight={700} letterSpacing="1px">
           {name}
         </Text>
-        <Text fontSize={"0.8em"} fontWeight={500} letterSpacing="0.7px">
+        <Text fontSize={'0.8em'} fontWeight={500} letterSpacing="0.7px">
           {title.toUpperCase()}
         </Text>
         <Stack
           mt="1em"
           spacing="3"
-          direction={["column", "column", "row"]}
+          direction={['column', 'column', 'row']}
           width="100%"
         >
           {social.map((item) => {
             return (
               <Stack key={item.name} direction="row">
-                <Icon as={item.icon} display="inline-block" />
+                <Icon as={mapIcon(item.name)} display="inline-block" />
                 <Text
-                  fontSize={"0.8em"}
+                  fontSize={'0.8em'}
                   fontWeight="300"
-                  display={"inline-block"}
+                  display={'inline-block'}
                   ml="8px"
                   letterSpacing="0.8px"
                 >
                   <Link
                     href={
-                      item.name !== "email" ? item.url : `mailto:${item.url}`
+                      item.name !== 'email' ? item.url : `mailto:${item.url}`
                     }
                     target="_blank"
                   >
@@ -72,13 +93,13 @@ const Resume = () => {
         <Stack spacing="3" mt="1em">
           {technical.map((item) => (
             <Box key={item.type}>
-              <Text as="h3" fontSize={"1em"} fontWeight={600}>
+              <Text as="h3" fontSize={'1em'} fontWeight={600}>
                 {item.type}
               </Text>
               <Wrap spacing="1">
                 {item.skills.map((skill) => (
                   <WrapItem key={skill}>
-                    <Badge fontSize={"0.7em"}>{skill}</Badge>
+                    <Badge fontSize={'0.7em'}>{skill}</Badge>
                   </WrapItem>
                 ))}
               </Wrap>
@@ -95,10 +116,10 @@ const Resume = () => {
         <Stack spacing={4} mt="1em">
           {employment.map((job) => (
             <Box key={job.company}>
-              <Text as="h3" fontSize={"0.8em"}>
+              <Text as="h3" fontSize={'0.8em'}>
                 <b>{job.position}</b>, <i>{job.company}</i>, {job.location}
               </Text>
-              <Badge fontSize={"0.7em"}>
+              <Badge fontSize={'0.7em'}>
                 {job.startDate} - {job.endDate}
               </Badge>
               <Box>
@@ -123,11 +144,11 @@ const Resume = () => {
         <Stack mt="1em">
           {projects.map((proj) => (
             <Box key={proj.name}>
-              <Text fontSize={"1em"} fontWeight={700}>
+              <Text fontSize={'1em'} fontWeight={700}>
                 {proj.name}
               </Text>
               <Link href={proj.url}>
-                <Text fontSize={"0.8em"} fontStyle="italic">
+                <Text fontSize={'0.8em'} fontStyle="italic">
                   {proj.link}
                 </Text>
               </Link>
@@ -141,7 +162,7 @@ const Resume = () => {
               </UnorderedList>
             </Box>
           ))}
-          <Box fontSize={"0.8em"}>
+          <Box fontSize={'0.8em'}>
             <Text mt="2em">
               <b>Work Authorization:</b> Canadian Citizen
             </Text>
@@ -153,20 +174,13 @@ const Resume = () => {
       </Container>
 
       <Container my="2em">
-        <Box>
-          <Text
-            fontSize={"1em"}
-            fontWeight={700}
-            letterSpacing="1px"
-            display={"inline-block"}
-          >
-            PDF Version
-          </Text>
-        </Box>
-
         <Link href={resumePath} target="_blank">
-          <Button fontSize={"0.8em"} variant="unstyled">
-            Download Here
+          <Button
+            fontSize={'0.8em'}
+            leftIcon={<FaDownload />}
+            _focus={{ outline: 'none' }}
+          >
+            Download PDF Version
           </Button>
         </Link>
       </Container>
