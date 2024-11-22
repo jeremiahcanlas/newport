@@ -13,7 +13,6 @@ import {
   ListItem,
   Button,
 } from '@chakra-ui/react';
-import data from '../public/data/data';
 import portfolioData from '../public/data/data.json';
 import { FaDownload } from 'react-icons/fa';
 import { SiGmail } from 'react-icons/si';
