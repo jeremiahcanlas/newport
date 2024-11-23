@@ -15,27 +15,31 @@
   "resume": {
     "name": "Jeremiah Canlas",
     "title": "Web Developer",
-    "resumePath": "/resume/resume.pdf",
+    "resumePath": "/assets/jeremiah-canlas-resume.pdf",
     "social": [
       {
         "name": "email",
         "username": "jeremiahcanlas@gmail.com",
-        "url": "jeremiahcanlas@gmail.com"
+        "url": "jeremiahcanlas@gmail.com",
+        "showInFooter": false
       },
       {
         "name": "website",
         "username": "jeremiahcanlas.com",
-        "url": "https://jeremiahcanlas.com"
+        "url": "https://jeremiahcanlas.com",
+        "showInFooter": false
       },
       {
         "name": "github",
         "username": "jeremiahcanlas",
-        "url": "https://github.com/jeremiahcanlas"
+        "url": "https://github.com/jeremiahcanlas",
+        "showInFooter": true
       },
       {
         "name": "linkedin",
         "username": "in/jeremiahcanlas",
-        "url": "https://linkedin.com/in/jeremiahcanlas/"
+        "url": "https://linkedin.com/in/jeremiahcanlas/",
+        "showInFooter": true
       }
     ],
     "technical": [

@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 const Meta = ({ title, keywords, description }: any) => (
   <Head>
@@ -7,18 +7,18 @@ const Meta = ({ title, keywords, description }: any) => (
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="robots" content="noindex" />
-    <link rel="shortcut icon" href="/icon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/assets/icon.ico" type="image/x-icon" />
 
     <title>{title}</title>
   </Head>
 );
 
 Meta.defaultProps = {
-  title: "Jeremiah Canlas",
+  title: 'Jeremiah Canlas',
   keywords:
-    "jeremiah canlas, portfolio, jeremiah, canlas, frontend developer, developer, code",
+    'jeremiah canlas, portfolio, jeremiah, canlas, frontend developer, developer, code',
   description:
-    "Hello!, My name is Jeremiah Canlas and I am a front end developer.",
+    'Hello!, My name is Jeremiah Canlas and I am a front end developer.',
 };
 
 export default Meta;

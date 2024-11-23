@@ -15,8 +15,7 @@ import {
 } from '@chakra-ui/react';
 import portfolioData from '../public/data/data.json';
 import { FaDownload } from 'react-icons/fa';
-import { SiGmail } from 'react-icons/si';
-import { IoGlobeOutline, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5';
+import mapIcon from '../utils/mapIcon';
 
 // Digital Resume
 const Resume = () => {
@@ -24,21 +23,6 @@ const Resume = () => {
 
   const { name, title, social, technical, employment, projects, resumePath } =
     resume;
-
-  const mapIcon = (name: string) => {
-    switch (name) {
-      case 'email':
-        return SiGmail;
-      case 'website':
-        return IoGlobeOutline;
-      case 'github':
-        return IoLogoGithub;
-      case 'linkedin':
-        return IoLogoLinkedin;
-      default:
-        break;
-    }
-  };
 
   return (
     <Box height={'100%'}>

@@ -10,6 +10,7 @@ import {
 import { Link as LinkScroll } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaChevronUp } from 'react-icons/fa';
 import portfolioData from '../public/data/data.json';
+import mapIcon from '../utils/mapIcon';
 
 const Footer = () => {
   const { colorMode } = useColorMode();
@@ -30,37 +31,28 @@ const Footer = () => {
 
         <Text fontSize={'0.8em'}>Back to Top</Text>
       </Box>
+
       <HStack spacing={'1.5em'} justify="center" mx="auto">
-        <Link
-          href="https://github.com/jeremiahcanlas"
-          isExternal
-          cursor="pointer"
-          _focus={{ outline: 'none' }}
-        >
-          <Icon
-            as={FaGithub}
-            color={colorMode === 'light' ? 'black' : 'white'}
-            fontSize="2em"
-            mb="1em"
-            opacity="0.8"
-            _hover={{ opacity: '1', color: 'smoke' }}
-          />
-        </Link>
-        <Link
-          href="https://linkedin.com/in/jeremiahcanlas"
-          isExternal
-          cursor="pointer"
-          _focus={{ outline: 'none' }}
-        >
-          <Icon
-            as={FaLinkedin}
-            color="#0e76a8"
-            fontSize="2em"
-            mb="1em"
-            opacity="0.8"
-            _hover={{ opacity: '1', color: 'smoke' }}
-          />
-        </Link>
+        {resume.social
+          .filter((item) => item.showInFooter)
+          .map((item) => (
+            <Link
+              href={item.url}
+              isExternal
+              cursor="pointer"
+              _focus={{ outline: 'none' }}
+              key={`social_key_${item.name}`}
+            >
+              <Icon
+                as={mapIcon(item.name)}
+                color={colorMode === 'light' ? 'black' : 'white'}
+                fontSize="2em"
+                mb="1em"
+                opacity="0.8"
+                _hover={{ opacity: '1', color: 'smoke' }}
+              />
+            </Link>
+          ))}
       </HStack>
 
       <Text fontWeight="300" fontSize="0.8em" letterSpacing="0.8px">
